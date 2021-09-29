@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_103815) do
+ActiveRecord::Schema.define(version: 2021_09_29_152604) do
 
   create_table "articles", charset: "utf8mb4", force: :cascade do |t|
     t.string "title"
@@ -18,6 +18,9 @@ ActiveRecord::Schema.define(version: 2021_09_29_103815) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
+    t.string "url"
+    t.string "slug"
+    t.index ["url"], name: "index_articles_on_url", unique: true
   end
 
   create_table "comments", charset: "utf8mb4", force: :cascade do |t|
